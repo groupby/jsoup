@@ -592,7 +592,7 @@ public class HttpConnection implements Connection {
                             cookieVal = "";
                         // ignores path, date, domain, secure et al. req'd?
                         // name not blank, value not null
-                        if (cookieName != null && cookieName.length() > 0)
+                        if (!hasCookie(cookieName) && cookieName != null && cookieName.length() > 0)
                             cookie(cookieName, cookieVal);
                     }
                 } else { // only take the first instance of each header
